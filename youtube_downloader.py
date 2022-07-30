@@ -2,7 +2,7 @@ import os
 print(os.getcwd())
 import pytube
 from pytube import Playlist
-playlist = Playlist('https://youtube.com/playlist?list=PLC36xJgs4dxG-IqARhc23jYTDMYt7yvZP') #C prog
+playlist = Playlist('') #ENTER PLAYLIST URL HERE
 print('Number of videos in playlist: %s' % len(playlist.video_urls))
 list = os.listdir()
 i = 0
