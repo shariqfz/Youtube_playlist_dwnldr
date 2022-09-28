@@ -2,7 +2,9 @@ import os
 print(os.getcwd())
 import pytube
 from pytube import Playlist
-playlist = Playlist('') #ENTER PLAYLIST URL HERE
+
+url = input("Enter Youtube Playlist link: ")
+playlist = Playlist(url) #ENTER PLAYLIST URL HERE
 print('Number of videos in playlist: %s' % len(playlist.video_urls))
 list = os.listdir()
 i = 0
@@ -19,7 +21,7 @@ for video in playlist.videos:
           stream.download(filename_prefix = str(i) + '. ')
           print(i, 'Downloaded - ', filename)
           f.write(str(i)+ ' Downloaded - ' + filename + '\n')
-        elif (filename not in list) and (int(os.path.getsize(filename)) == 0):
+        elif (filename in list) and (int(os.path.getsize(filename)) == 0):
           stream.download(filename_prefix = str(i) + '. ')
           print(i, ' Downloaded - ', filename)
           f.write(str(i)+ ' Downloaded - ' + filename + '\n')
